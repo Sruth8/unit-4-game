@@ -1,28 +1,131 @@
 
 
+
+
+
+
+
 //$("#number-to-guess").text(randomNumber);
 // for (var i = 0; i < crystalNumbers.length; i++) {}
 //var counter = 0;
 //$(".crystal-image").on("click", function () {
 
-    //counter += 10;
+//counter += 10;
 
-  $(document).ready(function(){
-    var randomNumber = Math.floor(Math.random() *(120 - 19 + 1)) + 19;
-    console.log(randomNumber);
+$(document).ready(function () {
+
+  var randomNumber = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+  console.log(randomNumber);
+
+  $(".block2").html(randomNumber);
+
+
+
+  var purple1 = Math.floor(Math.random() * 12) + 1;
+  console.log("purple: " + purple1);
+  $("#cImage1").html("<img src=" + "assets/images/color-magic-crystal-ball.png" + " value=" + purple1 + ">");
+
+
+
+
+
+  var blue2 = Math.floor(Math.random() * 12) + 1;
+  console.log("blue: " + blue2);
+  $("#cImage2").html("<img src=" + "assets/images/blue-Crystal.png" + " value=" + blue2 + ">");
+
+
+
+
+
+  var green3 = Math.floor(Math.random() * 12) + 1;
+  console.log("green: " + green3);
+  $("#cImage3").html("<img src=" + "assets/images/green-crystal.png" + " value=" + green3 + ">");
+
+
+
+  var yellow4 = Math.floor(Math.random() * 12) + 1;
+  console.log("yellow: " + yellow4);
+  $("#cImage4").html("<img src=" + "assets/images/yellow-crystal.png" + " value=" + yellow4 + ">");
+
+  var win = 0;
+  var lose = 0;
+  var score = 0;
+  var randomNum;
+
+  function reset() {
+    randomNum = Math.floor(Math.random() * 102) + 19;
+    console.log("randomNum: " + randomNum);
+    $(".randomNum").html(randomNum);
+
+  }
   
-$(".block2").html(randomNumber);
+
+  score = 0;
+  $(".total").html(score);
+
+
+
+  var purple1 = Math.floor(Math.random() * 12) + 1;
+  console.log("purple: " + purple1);
+  $("#img1").html("<img src=" + "assets/images/color-magic-crystal-ball.png" + " value=" + purple1 + ">");
+
+
+
+  var blue2 = Math.floor(Math.random() * 12) + 1;
+  console.log("blue: " + blue2);
+  $("#img2").html("<img src=" + "assets/images/blue-Crystal.png" + " value=" + blue2 + ">");
+
+
+
+  var green3 = Math.floor(Math.random() * 12) + 1;
+  console.log("green: " + green3);
+  $("#img3").html("<img src=" + "assets/images/green-crystal.png" + " value=" + green3 + ">");
+
+
+
+  var yellow4 = Math.floor(Math.random() * 12) + 1;
+  console.log("yellow: " + yellow4);
+  $("#img4").html("<img src=" + "assets/images/yellow-crystal.png" + " value=" + yellow4 + ">");
+
+
+
+
+  $("img").on("click", function () {
+    var newScore = score += parseInt($(this).attr("value"));
+    console.log("Your Score: " + newScore);
+    $(".score").html(score);
+
+
+    if (score === randomNum) {
+      win++;
+      $(".win").html("Win: " + win);
+      console.log("Win: " + win);
+      reset();
+
+    }
+
+    else if (score > randomNum) {
+      lose++;
+      $(".lose").html("Lose: " + lose);
+      console.log("Lose: " + lose);
+      reset();
+
+    }
+
+
+  });
 
 
 
 });
 
-        
 
-       
-       
-       
-       
+
+
+
+
+
+
         //var cImage = $("<img>");
 
         //cImage.addClass("CrystalImage");
@@ -32,64 +135,9 @@ $(".block2").html(randomNumber);
         //clImage.attr("data-crystalnumbers", numberOptions[i]);
 
        // $("#bottons").append(cImage);
-    
+
 
     //});
-
-        
-    
-
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -115,4 +163,5 @@ $(".block2").html(randomNumber);
 //When gane restarts, player will see a new number
 // the Crystals will also have differant values
 //Everythink else will reset to ero
-// Should show the numbers of wins and loses.
+// Should show the numbers of wins and loses
+

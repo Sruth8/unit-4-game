@@ -5,8 +5,9 @@ body {
   font-size: 18px;
   line-height: 150%;
   color: black;
-  background: #d62fd6;
+  
 }
+
 
 header {
     padding: 15px;
@@ -36,7 +37,7 @@ header {
 }
 
 #block3 {
-    float: left;
+    float: right;
    width: 200px;
     height: 200px;
     margin-top: 15px;
@@ -51,7 +52,7 @@ header {
 }
 
 #gamebuttons {
-    margin: 25px auto auto 10px;
+   background: green;
     width: 500;
     Height: 100px;
 
@@ -60,35 +61,51 @@ header {
     width: 120px;
     height: 100px;
     margin: 0 10px 0 10px;
-    float: right;
-    overflow: hidden;
+    float: left;
+   
     
 }
 
-#image1 {
-    width: 100px;
-    height: 100px;
-    float: right;
+.cImage {
+  width: 500px;
+  margin: 0 10px 0 10px;
 }
 
-#image2 {
+#purple1 {
+    width: 100px;
+    height: 100px;
+    
+
+    
+}
+
+#blue2 {
+    width: 100px;
+    height: 100px;
+    
+}
+
+#green3 {
+    width: 100px;
+    height: 100px;
+    
+}
+
+#yellow4 {
     width: 100px;
     height: 100px;
 }
 
-#image3 {
-    width: 100px;
-    height: 100px;
+#total {
+  background: olivedrab;
 }
 
-#image4 {
-    width: 100px;
-    height: 100px;
-}
 
-@media screen and (max-width: 768px) {
+
+
+@media screen and (max-width: 980px) {
     body {
-      background-color: rgb(15, 13, 13);
+      background-color: gray;
     }
   
     .wrapper {
