@@ -2,7 +2,10 @@
 
 
 
-
+var win = 0;
+var lose = 0;
+var score = 0;
+var randomNum;
 
 
 //$("#number-to-guess").text(randomNumber);
@@ -26,36 +29,31 @@ $(document).ready(function () {
   $("#cImage1").html("<img src=" + "assets/images/color-magic-crystal-ball.png" + " value=" + purple1 + ">");
 
 
-
-
-
   var blue2 = Math.floor(Math.random() * 12) + 1;
-  console.log("blue: " + blue2);
   $("#cImage2").html("<img src=" + "assets/images/blue-Crystal.png" + " value=" + blue2 + ">");
 
 
-
-
-
   var green3 = Math.floor(Math.random() * 12) + 1;
-  console.log("green: " + green3);
   $("#cImage3").html("<img src=" + "assets/images/green-crystal.png" + " value=" + green3 + ">");
 
-
-
   var yellow4 = Math.floor(Math.random() * 12) + 1;
-  console.log("yellow: " + yellow4);
   $("#cImage4").html("<img src=" + "assets/images/yellow-crystal.png" + " value=" + yellow4 + ">");
 
-  var win = 0;
-  var lose = 0;
-  var score = 0;
-  var randomNum;
+
 
   function reset() {
-    randomNum = Math.floor(Math.random() * 102) + 19;
-    console.log("randomNum: " + randomNum);
+    randomNum = Math.floor(Math.random() * 120 - 19) + 19;
+    console.log("randomNum = " + randomNum);
+   purple1 = Math.floor(Math.random() * (12 - 1) + 1);
+   blue2 = Math.floor(Math.random() * (12 - 1) + 1);
+   green3 = Math.floor(Math.random() * (12 - 1) + 1);
+   yellow4 = Math.floor(Math.random() * (12 - 1) + 1)
+   finalscore= 0;
+   
+   
+   
     $(".randomNum").html(randomNum);
+    $(".scoreDisplayChild").html(finalscore);
 
   }
   
@@ -71,21 +69,6 @@ $(document).ready(function () {
 
 
 
-  var blue2 = Math.floor(Math.random() * 12) + 1;
-  console.log("blue: " + blue2);
-  $("#img2").html("<img src=" + "assets/images/blue-Crystal.png" + " value=" + blue2 + ">");
-
-
-
-  var green3 = Math.floor(Math.random() * 12) + 1;
-  console.log("green: " + green3);
-  $("#img3").html("<img src=" + "assets/images/green-crystal.png" + " value=" + green3 + ">");
-
-
-
-  var yellow4 = Math.floor(Math.random() * 12) + 1;
-  console.log("yellow: " + yellow4);
-  $("#img4").html("<img src=" + "assets/images/yellow-crystal.png" + " value=" + yellow4 + ">");
 
 
 
@@ -138,13 +121,6 @@ $(document).ready(function () {
 
 
     //});
-
-
-
-
-
-
-
 
 
 
