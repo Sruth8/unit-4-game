@@ -23,21 +23,24 @@ $(document).ready(function () {
   $(".block2").html(randomNumber);
 
 
-
+function randomNum() {
   var purple1 = Math.floor(Math.random() * 12) + 1;
   console.log("purple: " + purple1);
-  $("#cImage1").html("<img src=" + "assets/images/color-magic-crystal-ball.png" + " value=" + purple1 + ">");
+  $("#purple1").append(buttons);
+
+}
+  
 
 
   var blue2 = Math.floor(Math.random() * 12) + 1;
-  $("#cImage2").html("<img src=" + "assets/images/blue-Crystal.png" + " value=" + blue2 + ">");
+  $("#blue2").html(bottons);
 
 
   var green3 = Math.floor(Math.random() * 12) + 1;
-  $("#cImage3").html("<img src=" + "assets/images/green-crystal.png" + " value=" + green3 + ">");
+  $("#green3").html(bottons);
 
   var yellow4 = Math.floor(Math.random() * 12) + 1;
-  $("#cImage4").html("<img src=" + "assets/images/yellow-crystal.png" + " value=" + yellow4 + ">");
+  $("#yellow4").html(bottons);
 
 
 
@@ -104,7 +107,8 @@ $(document).ready(function () {
 
 
 
-
+//var buttons = $( "<button>" + movies[i] + "</button>")
+//$("#movies-view" ).append(buttons)
 
 
 
