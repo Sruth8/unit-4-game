@@ -28,10 +28,6 @@ function randomNum() {
   console.log("purple: " + purple1);
   $("#purple1").append(buttons);
 
-}
-  
-
-
   var blue2 = Math.floor(Math.random() * 12) + 1;
   $("#blue2").html(buttons);
 
@@ -41,7 +37,7 @@ function randomNum() {
 
   var yellow4 = Math.floor(Math.random() * 12) + 1;
   $("#yellow4").html(buttons);
-
+}
 
 
   function reset() {
@@ -58,7 +54,7 @@ function randomNum() {
   
 
   score = 0;
-  $("#Total").html(win);
+  $("#Total").html(wins);
 
 
 
