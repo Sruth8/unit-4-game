@@ -2,11 +2,10 @@
 
 
 
-var win = 0;
-var lose = 0;
+var wins = 0;
 var score = 0;
 var randomNum;
-
+var buttons;
 
 //$("#number-to-guess").text(randomNumber);
 // for (var i = 0; i < crystalNumbers.length; i++) {}
@@ -20,7 +19,8 @@ $(document).ready(function () {
   var randomNumber = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
   console.log(randomNumber);
 
-  $(".block2").html(randomNumber);
+  $("#randNum").html(randomNumber);
+  $("#Total").html(wins)
 
 
 function randomNum() {
@@ -33,36 +33,32 @@ function randomNum() {
 
 
   var blue2 = Math.floor(Math.random() * 12) + 1;
-  $("#blue2").html(bottons);
+  $("#blue2").html(buttons);
 
 
   var green3 = Math.floor(Math.random() * 12) + 1;
-  $("#green3").html(bottons);
+  $("#green3").html(buttons);
 
   var yellow4 = Math.floor(Math.random() * 12) + 1;
-  $("#yellow4").html(bottons);
+  $("#yellow4").html(buttons);
 
 
 
   function reset() {
-    randomNum = Math.floor(Math.random() * 120 - 19) + 19;
-    console.log("randomNum = " + randomNum);
-   purple1 = Math.floor(Math.random() * (12 - 1) + 1);
-   blue2 = Math.floor(Math.random() * (12 - 1) + 1);
-   green3 = Math.floor(Math.random() * (12 - 1) + 1);
-   yellow4 = Math.floor(Math.random() * (12 - 1) + 1)
-   finalscore= 0;
+    randomNumber = Math.floor(Math.random() * 120 - 19) + 19;
+    console.log("randomNumber = " + randomNumber);
+  
+   newScore = 0;
+   score = 0;
+   $("#randNum").html(randomNumber);
    
    
-   
-    $(".randomNum").html(randomNum);
-    $(".scoreDisplayChild").html(finalscore);
-
+    
   }
   
 
   score = 0;
-  $(".total").html(score);
+  $("#Total").html(win);
 
 
 
@@ -71,29 +67,24 @@ function randomNum() {
   $("#img1").html("<img src=" + "assets/images/color-magic-crystal-ball.png" + " value=" + purple1 + ">");
 
 
-
-
-
-
-
   $("img").on("click", function () {
     var newScore = score += parseInt($(this).attr("value"));
-    console.log("Your Score: " + newScore);
-    $(".score").html(score);
+    console.log(newScore);
+    $("#score").html(score);
 
 
-    if (score === randomNum) {
-      win++;
-      $(".win").html("Win: " + win);
-      console.log("Win: " + win);
+    if (score === randomNumber) {
+      wins++;
+      $("#Total").html(wins);
+      console.log("Win: " + wins);
       reset();
 
     }
 
     else if (score > randomNum) {
-      lose++;
-      $(".lose").html("Lose: " + lose);
-      console.log("Lose: " + lose);
+      wins++;
+      $("#Total").html("Losse: " + wins);
+      console.log("Losse: " + wins);
       reset();
 
     }
@@ -123,6 +114,16 @@ function randomNum() {
 
        // $("#bottons").append(cImage);
 
+   //purple1 = Math.floor(Math.random() * (12 - 1) + 1);
+   //blue2 = Math.floor(Math.random() * (12 - 1) + 1);
+   //green3 = Math.floor(Math.random() * (12 - 1) + 1);
+   //yellow4 = Math.floor(Math.random() * (12 - 1) + 1)
+   //finalscore= 0;
+
+
+//$(".randomNum").html(randomNum);
+    //$(".scoreDisplayChild").html(finalscore);
+
 
     //});
 
@@ -138,10 +139,10 @@ function randomNum() {
 //Player score counter is updated.
 //The number will hide until clicked.
 //Player WINS if their total score matches the random number
-//Player LOSES if number goes past the original numbers
+//Player LOSsES if number goes past the original numbers
 //game restarts Whenever player wins or loses.
-//When gane restarts, player will see a new number
+//When game restarts, player will see a new number
 // the Crystals will also have differant values
-//Everythink else will reset to ero
+//Everything else will reset to ero
 // Should show the numbers of wins and loses
 
